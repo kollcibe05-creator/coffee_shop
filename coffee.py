@@ -1,7 +1,8 @@
 class Customer:
+    all = []
     def __init__(self, name):
         self.name = name
-
+        Customer.all.append(self)
     #name property
     @property 
     def name(self):
@@ -13,9 +14,18 @@ class Customer:
         else:
             raise ValueError("Name must be an integer with  between 1 and 15 characters")
 
+    def orders(self):
+        return [order for order in Order.all if order.customer is self]
+    def coffees(self):
+        return list(set([order.coffee for order in self.orders()]))       #Order.all if order.customer is self
+
+
+
 class Coffee:
+    all = []
     def __init__(self, name):
         self.name = name
+        Coffee.all.append(self)
 
     # coffe_name property
     @property
@@ -27,13 +37,21 @@ class Coffee:
             self._name = name    
         else:
             raise ValueError("name must be a string with at least 3 characters")  
+    
+    def orders(self):
+        return [order for order in Order.all  if order.coffee is self]
+
+    def customers(self):
+        return list(set([order.customer for order in self.orders()]))      #Order.all if order.coffee is self
 
 
 class Order:
+    all = []
     def __init__(self, customer, coffee, price):
         self.customer = customer
         self.coffee = coffee
         self.price = price
+        Order.all.append(self)
     
     #setting customer to be of class Customer
     @property  
@@ -83,3 +101,7 @@ class Order:
 # print(order_1.price)
 # print(order_1._coffee)
 # print(order_1._customer)
+
+# print(order_1.customer.name)
+
+# print(list(set([1,4,6,4,7,2])))
