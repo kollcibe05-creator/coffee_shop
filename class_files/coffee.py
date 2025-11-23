@@ -1,26 +1,3 @@
-class Customer:
-    all = []
-    def __init__(self, name):
-        self.name = name
-        Customer.all.append(self)
-    #name property
-    @property 
-    def name(self):
-        return self._name
-    @name.setter
-    def name(self, name):
-        if  isinstance(name, str) and   1< len(name) <15:
-            self._name = name  
-        else:
-            raise ValueError("Name must be an integer with  between 1 and 15 characters")
-
-    def orders(self):
-        return [order for order in Order.all if order.customer is self]
-    def coffees(self):
-        return list(set([order.coffee for order in self.orders()]))       #Order.all if order.customer is self
-    def create_order(self, coffee, price):
-        Order(self, coffee, price) 
-
 
 
 class Coffee:
@@ -86,124 +63,84 @@ class Coffee:
 
 
 
-class Order:
-    all = []
-    def __init__(self, customer, coffee, price):
-        self.customer = customer
-        self.coffee = coffee
-        self.price = price
-        Order.all.append(self)
-    
-    #setting customer to be of class Customer
-    @property  
-    def customer(self):
-        return self._customer  
-    @customer.setter
-    def customer(self, customer):
-        if not isinstance(customer, Customer):
-            raise TypeError("customer must be an instance of the Customer Class") 
-        self._customer = customer        
-
-
-    #setting coffee_ property
-    @property
-    def coffee(self):
-        return self._coffee 
-    @coffee.setter
-    def coffee(self, coffee):
-        if not isinstance(coffee, Coffee):
-            raise TypeError("coffee must be an instance of the Coffee Class")  
-        self._coffee = coffee  
-
-    #price property
-    @property
-    def price(self):
-        return self._price
-    @price.setter
-    def price(self, price):
-        if isinstance(price, float) and 1.0 <price<10.0:
-            self._price = price
-        else:
-            raise TypeError("Price must be a float between 1.0 and 10.0")    
 
 
 
 
 
+# cappuccino = Coffee("cappuccino")
+# espresso = Coffee("espresso")
+# mochas = Coffee("mochas")
+#                                                                                             # print(cappuccino.name)
 
-cappuccino = Coffee("cappuccino")
-espresso = Coffee("espresso")
-mochas = Coffee("mochas")
-                                                                                            # print(cappuccino.name)
-
-wafula = Customer("Wafula") 
-nekesa = Customer("Nekesa")
-kotlin = Customer("Kotlin")
-onika = Customer("Onika")
-                                                                                            # print(wafula.name)
-
-
-order_1 = Order(wafula, cappuccino, 9.1)
-order_2 = Order(wafula, cappuccino, 9.1)
-order_3 = Order(nekesa, cappuccino, 9.9)
-order_4 = Order(wafula, cappuccino, 9.1)
-
-order_5 = nekesa.create_order(espresso, 6.9) 
-order_6 = kotlin.create_order(espresso, 6.9)
+# wafula = Customer("Wafula") 
+# nekesa = Customer("Nekesa")
+# kotlin = Customer("Kotlin")
+# onika = Customer("Onika")
+#                                                                                             # print(wafula.name)
 
 
-order_7 = Order(onika, mochas, 9.1)
+# order_1 = Order(wafula, cappuccino, 9.1)
+# order_2 = Order(wafula, cappuccino, 9.1)
+# order_3 = Order(nekesa, cappuccino, 9.9)
+# order_4 = Order(wafula, cappuccino, 9.1)
+
+# order_5 = nekesa.create_order(espresso, 6.9) 
+# order_6 = kotlin.create_order(espresso, 6.9)
 
 
-# for order in wafula.orders():
-#     print(order.coffee.name)
+# order_7 = Order(onika, mochas, 9.1)
+
+
+# # for order in wafula.orders():
+# #     print(order.coffee.name)
    
-# print(wafula.orders())
+# # print(wafula.orders())
 
-# for order in nekesa.orders():
-#     print(order.coffee.name)
+# # for order in nekesa.orders():
+# #     print(order.coffee.name)
    
-# print(nekesa.orders())
+# # print(nekesa.orders())
 
-# print(onika.coffees())
-# print(nekesa.coffees())
-
-
-
-# print(order_1.price)
-# print(order_1._coffee)
-# print(order_1._customer)
-
-# print(order_1.customer.name)
-
-# print(list(set([1,4,6,4,7,2])))
-
-# print(cappuccino.orders())
-# print(espresso.orders())
-
-
-# print(mochas.customers())
+# # print(onika.coffees())
+# # print(nekesa.coffees())
 
 
 
+# # print(order_1.price)
+# # print(order_1._coffee)
+# # print(order_1._customer)
 
-# print(Coffee.most_afficionado(espresso))
+# # print(order_1.customer.name)
 
-# print(cappuccino.num_orders())
+# # print(list(set([1,4,6,4,7,2])))
 
-# print(cappuccino.average_price())
-# print(espresso.average_price())
+# # print(cappuccino.orders())
+# # print(espresso.orders())
 
 
-# dict_example = {"Collo": "99", "Mellow":"98"}
-# print(max(list(dict_example), key= lambda x: x[1]))
+# # print(mochas.customers())
 
-# print(Coffee.most_afficionado(cappuccino))
 
-# print(order_1.customer == wafula)
 
-# print(wafula.coffees())
 
-# print(order_5 in Order.all)
+# # print(Coffee.most_afficionado(espresso))
 
-# print(Coffee.most_afficionado(espresso))
+# # print(cappuccino.num_orders())
+
+# # print(cappuccino.average_price())
+# # print(espresso.average_price())
+
+
+# # dict_example = {"Collo": "99", "Mellow":"98"}
+# # print(max(list(dict_example), key= lambda x: x[1]))
+
+# # print(Coffee.most_afficionado(cappuccino))
+
+# # print(order_1.customer == wafula)
+
+# # print(wafula.coffees())
+
+# # print(order_5 in Order.all)
+
+# # print(Coffee.most_afficionado(espresso))
