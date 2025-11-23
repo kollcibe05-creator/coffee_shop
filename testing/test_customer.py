@@ -1,37 +1,8 @@
 import pytest
-# import sys 
-# import os 
+
 from class_files.coffee import Coffee
 from class_files.order import Order
 from class_files.customer import Customer
-
-# current_dir = os.path.dirname(__file__)
-# parent_directory = os.path.join(current_dir, "..")
-# sys.path.insert(0, parent_directory)
-
-# from coffee import Coffee, Order, Customer
-# cappuccino = Coffee("cappuccino")
-# espresso = Coffee("espresso")
-# mochas = Coffee("mochas")
-#    
-# wafula = Customer("Wafula") 
-# nekesa = Customer("Nekesa")
-# kotlin = Customer("Kotlin")
-# onika = Customer("Onika")
-#                                                                                             # print(wafula.name)
-
-
-# order_1 = Order(wafula, cappuccino, 9.1)
-# order_2 = Order(wafula, cappuccino, 9.1)
-# order_3 = Order(nekesa, cappuccino, 9.9)
-# order_4 = Order(wafula, cappuccino, 9.1)
-
-# order_5 = nekesa.create_order(espresso, 6.9) 
-# order_6 = kotlin.create_order(espresso, 6.9)
-
-
-# order_7 = Order(onika, mochas, 9.1)
-
 
 
 
@@ -58,7 +29,7 @@ class TestCustomer:
         wafula = Customer("Wafula") 
         nekesa = Customer("Nekesa")
         kotlin = Customer("Kotlin")
-        onika = Customer("Onika")                                                                                                  # print(wafula.name)
+        onika = Customer("Onika")                                                                                                  
 
         order_1 = Order(wafula, cappuccino, 9.1)
         order_2 = Order(wafula, cappuccino, 9.1)
@@ -80,7 +51,7 @@ class TestCustomer:
         wafula = Customer("Wafula") 
         nekesa = Customer("Nekesa")
         kotlin = Customer("Kotlin")
-        onika = Customer("Onika")                                                                                                  # print(wafula.name)
+        onika = Customer("Onika")                                                                                                  
 
         order_1 = Order(wafula, cappuccino, 9.1)
         order_2 = Order(wafula, cappuccino, 9.1)
@@ -103,7 +74,7 @@ class TestCustomer:
         wafula = Customer("Wafula") 
         nekesa = Customer("Nekesa")
         kotlin = Customer("Kotlin")
-        onika = Customer("Onika")                                                                                                  # print(wafula.name)
+        onika = Customer("Onika")                                                                                                 
 
         order_1 = Order(wafula, cappuccino, 9.1)
         order_2 = Order(wafula, cappuccino, 9.1)
@@ -119,4 +90,31 @@ class TestCustomer:
         assert mochas in onika.coffees()
         assert espresso in nekesa.coffees()    
         
+# import sys 
+# import os 
+
+# current_dir = os.path.dirname(__file__)
+# parent_directory = os.path.join(current_dir, "..")
+# sys.path.insert(0, parent_directory)
+
+# from coffee import Coffee, Order, Customer
+# cappuccino = Coffee("cappuccino")
+# espresso = Coffee("espresso")
+# mochas = Coffee("mochas")
+#    
+# wafula = Customer("Wafula") 
+# nekesa = Customer("Nekesa")
+# kotlin = Customer("Kotlin")
+# onika = Customer("Onika")                                                                                         
+
+# order_1 = Order(wafula, cappuccino, 9.1)
+# order_2 = Order(wafula, cappuccino, 9.1)
+# order_3 = Order(nekesa, cappuccino, 9.9)
+# order_4 = Order(wafula, cappuccino, 9.1)
+
+# order_5 = nekesa.create_order(espresso, 6.9) 
+# order_6 = kotlin.create_order(espresso, 6.9)
+
+
+# order_7 = Order(onika, mochas, 9.1)
 

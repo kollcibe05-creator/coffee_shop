@@ -30,7 +30,7 @@ class TestCoffee:
         wafula = Customer("Wafula") 
         nekesa = Customer("Nekesa")
         kotlin = Customer("Kotlin")
-        onika = Customer("Onika")                                                                                                  # print(wafula.name)
+        onika = Customer("Onika")                                                                                                  
 
         order_1 = Order(wafula, cappuccino, 9.1)
         order_2 = Order(wafula, cappuccino, 9.1)
@@ -54,7 +54,7 @@ class TestCoffee:
         wafula = Customer("Wafula") 
         nekesa = Customer("Nekesa")
         kotlin = Customer("Kotlin")
-        onika = Customer("Onika")                                                                                                  # print(wafula.name)
+        onika = Customer("Onika")                                                                                               
 
         order_1 = Order(wafula, cappuccino, 9.1)
         order_2 = Order(wafula, cappuccino, 9.1)
@@ -78,7 +78,7 @@ class TestCoffee:
         wafula = Customer("Wafula") 
         nekesa = Customer("Nekesa")
         kotlin = Customer("Kotlin")
-        onika = Customer("Onika")                                                                                                  # print(wafula.name)
+        onika = Customer("Onika")                                                                                                 
 
         order_1 = Order(wafula, cappuccino, 9.1)
         order_2 = Order(wafula, cappuccino, 9.1)

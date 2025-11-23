@@ -4,6 +4,7 @@ from .order import Order
 # if TYPE_CHECKING:
 #     from .order import Order
 
+
 class Coffee:
     all = []
     def __init__(self, name):
@@ -25,13 +26,13 @@ class Coffee:
         return [order for order in Order.all  if order.coffee is self]
 
     def customers(self):
-        return list(set([order.customer for order in self.orders()]))      #Order.all if order.coffee is self
+        return list(set([order.customer for order in self.orders()]))         #Order.all if order.coffee is self
     
     ###must be tested####
     def num_orders(self):
         count = 0
         for order in Order.all:
-            if order.coffee is self:     ##len of self.orders() ~ didn't work 
+            if order.coffee is self:                                          ##len of self.orders() ~ didn't work 
                 count += 1
         return count  
         # all_orders = len(self.orders())
