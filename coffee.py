@@ -192,6 +192,7 @@ order_7 = Order(onika, mochas, 9.1)
 # print(cappuccino.num_orders())
 
 # print(cappuccino.average_price())
+# print(espresso.average_price())
 
 
 # dict_example = {"Collo": "99", "Mellow":"98"}
@@ -204,3 +205,5 @@ order_7 = Order(onika, mochas, 9.1)
 # print(wafula.coffees())
 
 # print(order_5 in Order.all)
+
+# print(Coffee.most_afficionado(espresso))
