@@ -62,7 +62,76 @@ class TestCustomer:
 
         with pytest.raises(ValueError):
             Customer(15)
+    def test_orders_method(self):
+        """method(self) returns a list of all order instances for the customer"""
+        cappuccino = Coffee("cappuccino")
+        espresso = Coffee("espresso")
+        mochas = Coffee("mochas")
+   
+        wafula = Customer("Wafula") 
+        nekesa = Customer("Nekesa")
+        kotlin = Customer("Kotlin")
+        onika = Customer("Onika")                                                                                                  # print(wafula.name)
 
+        order_1 = Order(wafula, cappuccino, 9.1)
+        order_2 = Order(wafula, cappuccino, 9.1)
+        order_3 = Order(nekesa, cappuccino, 9.9)
+        order_4 = Order(wafula, cappuccino, 9.1)
+
+        order_5 = nekesa.create_order(espresso, 6.9) 
+        order_6 = kotlin.create_order(espresso, 6.9)
+
+        order_7 = Order(onika, mochas, 9.1)
+        assert wafula.orders() == [order_1, order_2, order_4]
+
+    def test_coffees_method(self):
+        """coffees() returns a unique, list of Coffee instances for the customer"""
+        cappuccino = Coffee("cappuccino")
+        espresso = Coffee("espresso")
+        mochas = Coffee("mochas")
+   
+        wafula = Customer("Wafula") 
+        nekesa = Customer("Nekesa")
+        kotlin = Customer("Kotlin")
+        onika = Customer("Onika")                                                                                                  # print(wafula.name)
+
+        order_1 = Order(wafula, cappuccino, 9.1)
+        order_2 = Order(wafula, cappuccino, 9.1)
+        order_3 = Order(nekesa, cappuccino, 9.9)
+        order_4 = Order(wafula, cappuccino, 9.1)
+
+        order_5 = nekesa.create_order(espresso, 6.9) 
+        order_6 = kotlin.create_order(espresso, 6.9)
+
+        order_7 = Order(onika, mochas, 9.1)    
+
+        assert len(wafula.coffees()) ==  1
+
+    def test_create_order_method(self):
+        """create_order(self, coffee, price creates a new Order instance in Order Class)"""
+        cappuccino = Coffee("cappuccino")
+        espresso = Coffee("espresso")
+        mochas = Coffee("mochas")
+   
+        wafula = Customer("Wafula") 
+        nekesa = Customer("Nekesa")
+        kotlin = Customer("Kotlin")
+        onika = Customer("Onika")                                                                                                  # print(wafula.name)
+
+        order_1 = Order(wafula, cappuccino, 9.1)
+        order_2 = Order(wafula, cappuccino, 9.1)
+        order_3 = Order(nekesa, cappuccino, 9.9)
+        order_4 = Order(wafula, cappuccino, 9.1)
+
+        order_5 = nekesa.create_order(espresso, 6.9) 
+        order_6 = kotlin.create_order(espresso, 6.9)
+
+        order_7 = Order(onika, mochas, 9.1)
+
+        # assert order_5 in Order.all
+        assert mochas in onika.coffees()
+        assert espresso in nekesa.coffees()    
+        
 
 
 class TestOrder:
@@ -120,6 +189,7 @@ class TestOrder:
 
 
     def test_coffee_class_instance(self):
+        """Coffee is an instance of the Coffee Class"""
         cappuccino = Coffee("cappuccino")
         espresso = Coffee("espresso")
         mochas = Coffee("mochas")
@@ -144,6 +214,7 @@ class TestOrder:
             Order(wafula, "Americanos", 7.5)
 
     def test_price_validity(self):
+        """Price is a float of value between 1.0 and 10.0"""
         cappuccino = Coffee("cappuccino")
         espresso = Coffee("espresso")
         mochas = Coffee("mochas")
@@ -167,7 +238,7 @@ class TestOrder:
 
         with pytest.raises(TypeError):
             Order(wafula, cappuccino, 10.1) 
-    
+
 
                 
 

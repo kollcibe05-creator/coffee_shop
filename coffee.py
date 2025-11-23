@@ -131,28 +131,28 @@ class Order:
 
 
 
-# cappuccino = Coffee("cappuccino")
-# espresso = Coffee("espresso")
-# mochas = Coffee("mochas")
-#                                                                                             # print(cappuccino.name)
+cappuccino = Coffee("cappuccino")
+espresso = Coffee("espresso")
+mochas = Coffee("mochas")
+                                                                                            # print(cappuccino.name)
 
-# wafula = Customer("Wafula") 
-# nekesa = Customer("Nekesa")
-# kotlin = Customer("Kotlin")
-# onika = Customer("Onika")
-#                                                                                             # print(wafula.name)
-
-
-# order_1 = Order(wafula, cappuccino, 9.1)
-# order_2 = Order(wafula, cappuccino, 9.1)
-# order_3 = Order(nekesa, cappuccino, 9.9)
-# order_4 = Order(wafula, cappuccino, 9.1)
-
-# order_5 = nekesa.create_order(espresso, 6.9) 
-# order_6 = kotlin.create_order(espresso, 6.9)
+wafula = Customer("Wafula") 
+nekesa = Customer("Nekesa")
+kotlin = Customer("Kotlin")
+onika = Customer("Onika")
+                                                                                            # print(wafula.name)
 
 
-# order_7 = Order(onika, mochas, 9.1)
+order_1 = Order(wafula, cappuccino, 9.1)
+order_2 = Order(wafula, cappuccino, 9.1)
+order_3 = Order(nekesa, cappuccino, 9.9)
+order_4 = Order(wafula, cappuccino, 9.1)
+
+order_5 = nekesa.create_order(espresso, 6.9) 
+order_6 = kotlin.create_order(espresso, 6.9)
+
+
+order_7 = Order(onika, mochas, 9.1)
 
 
 # for order in wafula.orders():
@@ -200,3 +200,7 @@ class Order:
 # print(Coffee.most_afficionado(cappuccino))
 
 # print(order_1.customer == wafula)
+
+# print(wafula.coffees())
+
+# print(order_5 in Order.all)
