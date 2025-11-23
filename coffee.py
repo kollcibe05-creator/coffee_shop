@@ -71,12 +71,16 @@ class Coffee:
         dict_holder = {}
         people_ordered =  [order.customer for order in Order.all if order.coffee is coffee]
         dict_holder = {}
-        for person in people_ordered:            
-            dict_holder[person.name] = dict_holder.get(person.name, 0) + 1
-        return (max(dict_holder, key= lambda x: x))
-        # return ("The most contributed times:", max(dict_holder.values()))
-        # print(people_ordered)
-        # print(max(dict_holder, key =lambda item: item[1] ))      # else None 
+        if people_ordered != []:
+            for person in people_ordered:            
+                dict_holder[person.name] = dict_holder.get(person.name, 0) + 1
+            best_contributor = (max(dict_holder, key= lambda x: x))
+            return best_contributor if best_contributor else None
+            # return ("The most contributed times:", max(dict_holder.values()))
+            # print(people_ordered)
+            # print(max(dict_holder, key =lambda item: item[1] ))      # else None 
+        else:
+             return None    
 
 
 
@@ -193,4 +197,4 @@ order_7 = Order(onika, mochas, 9.1)
 # dict_example = {"Collo": "99", "Mellow":"98"}
 # print(max(list(dict_example), key= lambda x: x[1]))
 
-# print(Coffee.most_afficionado(cappuccino))
+print(Coffee.most_afficionado(cappuccino))
