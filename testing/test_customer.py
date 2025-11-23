@@ -2,9 +2,9 @@ import pytest
 import sys 
 import os 
 
-current_dir = os.path.dirname(__file__)
-parent_directory = os.path.join(current_dir, "..")
-sys.path.insert(0, parent_directory)
+# current_dir = os.path.dirname(__file__)
+# parent_directory = os.path.join(current_dir, "..")
+# sys.path.insert(0, parent_directory)
 
 from coffee import Coffee, Order, Customer
 # cappuccino = Coffee("cappuccino")
