@@ -7,7 +7,7 @@ The ideological business requirements are:
 2. A Coffee can have `many` Orders.
 3. An Order belongs to `one` Customer and `one` Coffee.
 
-### Technologies used
+### Tech Stack
 - Python
 - Markdown
 
