@@ -47,6 +47,28 @@ class TestCoffee:
         short_name = ""    
         with pytest.raises(ValueError):
             Coffee(short_name)
+    def test_num_orders_method(self):  
+        """num_orders(self) returns the number of orders the coffee has"""      
+        cappuccino = Coffee("cappuccino")
+        espresso = Coffee("espresso")
+        mochas = Coffee("mochas")
+   
+        wafula = Customer("Wafula") 
+        nekesa = Customer("Nekesa")
+        kotlin = Customer("Kotlin")
+        onika = Customer("Onika")                                                                                                  # print(wafula.name)
+
+        order_1 = Order(wafula, cappuccino, 9.1)
+        order_2 = Order(wafula, cappuccino, 9.1)
+        order_3 = Order(nekesa, cappuccino, 9.9)
+        order_4 = Order(wafula, cappuccino, 9.1)
+
+        order_5 = nekesa.create_order(espresso, 6.9) 
+        order_6 = kotlin.create_order(espresso, 6.9)
+
+        order_7 = Order(onika, mochas, 9.1)
+
+        assert cappuccino.num_orders() == 4
 
 class TestCustomer:
     """Tests for the Customer Class"""  
