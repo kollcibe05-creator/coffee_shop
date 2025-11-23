@@ -46,26 +46,36 @@ class Coffee:
     def customers(self):
         return list(set([order.customer for order in self.orders()]))      #Order.all if order.coffee is self
     
-    # ###must be tested
-    # def num_orders(self):
-    #     for order in Order.all:
-    #         if order.coffee is self:     ##len of self.orders()
-    #             count += 1
-    #         return count  
-    # def average_price(self):
-    #     prices = [order.price for order in Order.all if order.coffee is self]
-    #     summation = sum[price * self.num_orders() for price in prices]
-    #     avg = summation/num_orders()
-    #     return avg
+    ###must be tested####
+    def num_orders(self):
+        # all_orders = len(self.orders())
+        # all_orders = len([orders for orders in self.orders()])
+        # print(all_orders)
+        count = 0
+        for order in Order.all:
+            if order.coffee is self:     ##len of self.orders()
+                count += 1
+        return count  
+    def average_price(self):
+        sum_of_prices_for_the_coffee = sum([order.price for order in Order.all if order.coffee is self])
+        avg = sum_of_prices_for_the_coffee/ self.num_orders()
+        return avg
+        # num_of_orders = [num for num in num_orders()]
+        # summation = sum(prices_for_the_coffee)
+        # avg = summation/num_orders()
+        # return avg
 
     @classmethod    
     def most_afficionado(cls, coffee):
         dict_holder = {}
-        people_ordered =  [order.person for order in Order.all if order.cofee is self]
+        people_ordered =  [order.customer for order in Order.all if order.coffee is coffee]
+        # print(people_ordered)
         dict_holder = {}
-        for person in people_ordered:
-            dict_holder[person] = dict_holder.get(person, 0) + 1
-        return max(dict_holder.list(), key=lambda item: item[1] )       # else None 
+        for person in people_ordered:            
+            dict_holder[person.name] = dict_holder.get(person.name, 0) + 1
+        # return ("The most contributed times:", max(dict_holder.values()))
+        return (max(dict_holder, key= lambda x: x))
+        # print(max(dict_holder, key =lambda item: item[1] ))      # else None 
 
 
 
@@ -130,7 +140,7 @@ onika = Customer("Onika")
 
 order_1 = Order(wafula, cappuccino, 9.1)
 order_2 = Order(wafula, cappuccino, 9.1)
-order_3 = Order(nekesa, cappuccino, 9.1)
+order_3 = Order(nekesa, cappuccino, 9.9)
 order_4 = Order(wafula, cappuccino, 9.1)
 
 order_5 = nekesa.create_order(espresso, 6.9) 
@@ -168,3 +178,18 @@ order_7 = Order(onika, mochas, 9.1)
 
 
 # print(mochas.customers())
+
+
+
+
+# print(Coffee.most_afficionado(espresso))
+
+# print(cappuccino.num_orders())
+
+# print(cappuccino.average_price())
+
+
+# dict_example = {"Collo": "99", "Mellow":"98"}
+# print(max(list(dict_example), key= lambda x: x[1]))
+
+print(Coffee.most_afficionado(cappuccino))
