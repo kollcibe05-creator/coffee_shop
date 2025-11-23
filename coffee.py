@@ -46,27 +46,26 @@ class Coffee:
     def customers(self):
         return list(set([order.customer for order in self.orders()]))      #Order.all if order.coffee is self
     
-    ###must be tested
-    def num_orders(self):
-        for order in Order.all:
-            if order.coffee is self:     ##len of self.orders()
-                count += 1
-            return count  
-    def average_price(self):
-        prices = [order.price for order in Order.all if order.coffee is self]
-        summation = sum[price * self.num_orders for price in prices]
-        avg = summation/num_orders()
-        return avg
+    # ###must be tested
+    # def num_orders(self):
+    #     for order in Order.all:
+    #         if order.coffee is self:     ##len of self.orders()
+    #             count += 1
+    #         return count  
+    # def average_price(self):
+    #     prices = [order.price for order in Order.all if order.coffee is self]
+    #     summation = sum[price * self.num_orders() for price in prices]
+    #     avg = summation/num_orders()
+    #     return avg
 
     @classmethod    
     def most_afficionado(cls, coffee):
-        Order.all  ~ customer, coffee, price
         dict_holder = {}
         people_ordered =  [order.person for order in Order.all if order.cofee is self]
         dict_holder = {}
         for person in people_ordered:
             dict_holder[person] = dict_holder.get(person, 0) + 1
-        return max(dict_holder.list(), key=lambda item: item[1] ) else None 
+        return max(dict_holder.list(), key=lambda item: item[1] )       # else None 
 
 
 
@@ -117,28 +116,42 @@ class Order:
 
 
 
-# cappuccino = Coffee("cappuccino")
-# espresso = Coffee("espresso")
-# mochas = Coffee("mochas")
-#                                                                                             # print(cappuccino.name)
+cappuccino = Coffee("cappuccino")
+espresso = Coffee("espresso")
+mochas = Coffee("mochas")
+                                                                                            # print(cappuccino.name)
 
-# wafula = Customer("Wafula") 
-# nekesa = Customer("Nekesa")
-# kotlin = Customer("Kotlin")
-# onika = Customer("Onika")
-#                                                                                             # print(wafula.name)
-
-
-# order_1 = Order(wafula, cappuccino, 9.1)
-# order_2 = Order(wafula, cappuccino, 9.1)
-# order_3 = Order(nekesa, cappuccino, 9.1)
-# order_4 = Order(wafula, cappuccino, 9.1)
-
-# order_5 = nekesa.create_order(espresso, 6.9) 
-# order_6 = kotlin.create_order(espresso, 6.9)
+wafula = Customer("Wafula") 
+nekesa = Customer("Nekesa")
+kotlin = Customer("Kotlin")
+onika = Customer("Onika")
+                                                                                            # print(wafula.name)
 
 
-# order_7 = Order(onika, cappuccino, 9.1)
+order_1 = Order(wafula, cappuccino, 9.1)
+order_2 = Order(wafula, cappuccino, 9.1)
+order_3 = Order(nekesa, cappuccino, 9.1)
+order_4 = Order(wafula, cappuccino, 9.1)
+
+order_5 = nekesa.create_order(espresso, 6.9) 
+order_6 = kotlin.create_order(espresso, 6.9)
+
+
+order_7 = Order(onika, mochas, 9.1)
+
+
+# for order in wafula.orders():
+#     print(order.coffee.name)
+   
+# print(wafula.orders())
+
+# for order in nekesa.orders():
+#     print(order.coffee.name)
+   
+# print(nekesa.orders())
+
+# print(onika.coffees())
+# print(nekesa.coffees())
 
 
 
@@ -149,3 +162,9 @@ class Order:
 # print(order_1.customer.name)
 
 # print(list(set([1,4,6,4,7,2])))
+
+# print(cappuccino.orders())
+# print(espresso.orders())
+
+
+# print(mochas.customers())
