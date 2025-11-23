@@ -1,3 +1,9 @@
+# from typing import TYPE_CHECKING
+from .order import Order
+
+# if TYPE_CHECKING:
+#    from .order import Order
+
 class Customer:
     all = []
     def __init__(self, name):

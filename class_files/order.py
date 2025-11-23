@@ -1,3 +1,9 @@
+# from typing import TYPE_CHECKING
+
+# if TYPE_CHECKING:
+#     from .coffee import Coffee
+#     from .customer import Customer
+
 
 class Order:
     all = []
@@ -13,6 +19,7 @@ class Order:
         return self._customer  
     @customer.setter
     def customer(self, customer):
+        from .customer import Customer
         if not isinstance(customer, Customer):
             raise TypeError("customer must be an instance of the Customer Class") 
         self._customer = customer        
@@ -21,9 +28,11 @@ class Order:
     #setting coffee_ property
     @property
     def coffee(self):
+        
         return self._coffee 
     @coffee.setter
-    def coffee(self, coffee):
+    def coffee(self, coffee):        
+        from .coffee import Coffee
         if not isinstance(coffee, Coffee):
             raise TypeError("coffee must be an instance of the Coffee Class")  
         self._coffee = coffee  

@@ -1,4 +1,8 @@
+# from typing import TYPE_CHECKING
+from .order import Order
 
+# if TYPE_CHECKING:
+#     from .order import Order
 
 class Coffee:
     all = []
