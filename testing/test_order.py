@@ -1,3 +1,9 @@
+import pytest
+
+from class_files.coffee import Coffee
+from class_files.order import Order
+from class_files.customer import Customer
+
 
 class TestOrder:
     """Tests for Order Class"""

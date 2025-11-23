@@ -1,6 +1,9 @@
 import pytest
-import sys 
-import os 
+# import sys 
+# import os 
+from class_files.coffee import Coffee
+from class_files.order import Order
+from class_files.customer import Customer
 
 # current_dir = os.path.dirname(__file__)
 # parent_directory = os.path.join(current_dir, "..")
