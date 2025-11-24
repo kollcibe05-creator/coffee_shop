@@ -16,8 +16,6 @@ The ideological business requirements are:
 It contains the following subdirectories:
 **Class_files**: It contains the files *order.py* , *customer.py* and *coffee.py* which contain the classes with the corresponding names.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 **testing**: It contains the files *test_order.py*, *test_coffee.py*, and *test_customer.py* which contain test cases for the corresponding classes.
 It also contains the files:
 ``debug.py``: which provides interactive debugging while running the test cases.
